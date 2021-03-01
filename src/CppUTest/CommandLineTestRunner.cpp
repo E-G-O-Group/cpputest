@@ -168,7 +168,9 @@ TestOutput* CommandLineTestRunner::createJUnitOutput(const SimpleString& package
 
 TestOutput* CommandLineTestRunner::createConsoleOutput()
 {
-    return new ConsoleTestOutput;
+    TestOutput* oTestOutput = new ConsoleTestOutput();
+    oTestOutput->setCommandLineArguments(arguments_);
+    return oTestOutput;
 }
 
 TestOutput* CommandLineTestRunner::createCompositeOutput(TestOutput* outputOne, TestOutput* outputTwo)

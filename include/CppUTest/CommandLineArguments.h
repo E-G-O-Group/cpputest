@@ -63,6 +63,8 @@ public:
     const SimpleString& getPackageName() const;
     const char* usage() const;
     const char* help() const;
+    const SimpleString& getProgramName() const;
+    const SimpleString& getProjectPath() const;
 
 private:
 
@@ -93,6 +95,8 @@ private:
     TestFilter* nameFilters_;
     OutputType outputType_;
     SimpleString packageName_;
+    SimpleString programName_;
+    SimpleString projectPath_;
 
     SimpleString getParameterField(int ac, const char *const *av, int& i, const SimpleString& parameterName);
     void setRepeatCount(int ac, const char *const *av, int& index);
@@ -109,6 +113,7 @@ private:
     void addTestToRunBasedOnVerboseOutput(int ac, const char *const *av, int& index, const char* parameterName);
     bool setOutputType(int ac, const char *const *av, int& index);
     void setPackageName(int ac, const char *const *av, int& index);
+    void setProjectPath(int ac, const char *const *av, int& index);
 
     CommandLineArguments(const CommandLineArguments&);
     CommandLineArguments& operator=(const CommandLineArguments&);
